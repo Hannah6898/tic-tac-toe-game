@@ -6,23 +6,17 @@ body{
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    background: #FFFBCA;
 }
 
 #gameboard{
     width: 600px;
     height: 600px;
-    background:black;
-    display: flex;
-    flex-wrap: wrap;
-    border: 1px black solid;
 }
 
 .square{
-    background-color: white;
     width: 200px;
     height: 200px;
-    border: 1px solid black;
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,21 +26,37 @@ body{
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    border: 15px solid black;
+    border: 10px solid black;
     box-sizing: border-box;
+    position: relative;
+    background: #AEEA94;
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: #FFFBCA;
+    border: 10px solid black;
+    border-radius: 50%;
 }
 
 .cross{
     height: 150px;
     width: 150px;
     position:relative;
-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .cross:before, .cross:after{
     content: "";
     position: absolute;
-    background-color: red;
+    background-color: #B771E5;
+    border: 10px solid black;
 }
 
 .cross:before{
@@ -61,4 +71,47 @@ transform: rotate(45deg);
     width: 100%;
     height:30%;
     margin-top:-15%;
+}
+
+.info-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding:10px;
+    margin-top:20px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    border: 5px solid black;
+}
+
+.info-text{
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.info-block[data-player="circle"] .info-text{
+    color: #5fe322;
+}
+
+.info-block[data-player="cross"] .info-text{
+    color: #8c20d4;
+}
+
+.info-block[data-player="circle"] {
+    background-color:#cdf0bdAF
+}
+
+.info-block[data-player="cross"] {
+    background-color:#d9b6f0AF
+}
+
+.info-block[data-player="draw"]{
+    background-color: black;
+}
+
+.info-block[data-player="draw"] .info-text{
+    color: white;
 }

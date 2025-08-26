@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Tic-tac-toe JavaScript</title>
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-
-<div id="gameboard"></div>
-<p id="info"></p>
-
+<div id="gameboard" class="grid grid-cols-3 grid-rows-3">
+</div>
+<div class="info-block" id="info-block"><p class="info-text" id="info"></p></div>
 <script src="app.js"></script>
 </body>
 </html>
